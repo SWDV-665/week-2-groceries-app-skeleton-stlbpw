@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Grocery
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Grocery</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let grocery of groceryList">
+      <ion-item>
+        <ion-label>{{grocery.getName()}}</ion-label>
+        <p>Quantity: {{grocery.getQuantity()}}</p>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" (click)="deleteItem(grocery)">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
+
+</ion-content>
